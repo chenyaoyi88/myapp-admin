@@ -1,2 +1,4 @@
-# myapp-admin
-app后台管理
+# APP 后台管理
+
+此项目为 APP 的后台管理
+

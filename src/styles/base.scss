@@ -1,0 +1,19 @@
+@import "variables.scss";
+body {
+  background: map-get($colorful, color-1);
+  font-size: 14px;
+}
+
+a {
+  color: $color-brand;
+  &:hover {
+    color: darken($color-brand, 5%);
+  }
+}
+
+a:hover,
+a:active,
+a:visited,
+a:focus {
+  text-decoration: none;
+}

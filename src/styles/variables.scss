@@ -1,0 +1,25 @@
+// 项目主色调
+$color-brand: #1DB455 !default;
+
+// 轻主题色调
+$color-dark: rgba(0, 0, 0, 0.87) !default; // Primary text
+$color-gray-dark: #373a3c !default;
+$color-gray: rgba(0, 0, 0, 0.54) !default;  // Secondary text
+$color-gray-light: rgba(0, 0, 0, 0.38) !default;  // Disabled text, hint text, and icons
+$color-gray-lighter: rgba(0, 0, 0, 0.12) !default;  // Dividers
+
+// 其他主色调
+$colorful: (
+  primary: $color-brand,
+  color-1: #F8F8F8,
+  color-2: #D6DDDC,
+  color-3: #254E5A,
+  color-4: #226DA3,
+  color-5: #9FC4A4,
+  color-6: #4C94C8,
+  color-7: #65A99C
+) !default;
+
+$header-height: 70px;
+$side-menu-width: 220px;
+$menu-enlarged-width: 70px;

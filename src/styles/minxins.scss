@@ -1,0 +1,17 @@
+// 水平垂直居中
+@mixin align-justify($dir:row, $ali:center, $just:content) {
+    display: flex;
+    flex-direction: $dir;
+    align-items: $ali;
+    justify-content: $just;
+}
+
+// 遮罩层
+@mixin mask($zindex: 100) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $zindex;
+}
