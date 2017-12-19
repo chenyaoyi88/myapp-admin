@@ -1,12 +1,27 @@
+@import '../../../styles/variables.scss';
 :host ::ng-deep .home-wrap {
   height: 100%;
 }
 
 :host ::ng-deep .logo {
-  height: 32px;
-  background: #fcfeff;
-  border-radius: 6px;
-  margin: 16px;
+  height: 64px;
+  background: $color-brand;
+  border-bottom: 1px solid map-get($colorful, light-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .myapp-logo {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    color: $color-brand;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.12);
+  }
 }
 
  :host ::ng-deep .ant-layout-sider-collapsed .nav-text {
@@ -31,27 +46,28 @@
 }
 
  :host ::ng-deep .trigger:hover {
-  color: #108ee9;
+  color: $color-brand;
 }
 
 .home-sider-wrap {
-  background-color: #1e90e5;
+  background-color: $color-brand;
 }
 
 .home-wrap {
+  .home-menu-title {
+    font-size: 24px;
+    color: map-get($colorful, light-white);
+    text-align: center;
+    font-weight: initial;
+  }
   .home-menu {
     background-color: initial;
     border-right: none;
     >li {
-      &.ant-menu-item {
-        &:hover {
-          color: #fcfeff !important;
-        }
-      }
+      font-size: 16px;
+      color: map-get($colorful, light-white);
       &.ant-menu-item-selected {
-        &:hover {
-          color: #1e90e5 !important;
-        }
+        color: $color-brand !important;
       }
     }
   }
@@ -60,7 +76,7 @@
 .home-main-wrap {
   background-color: #e2f2fc;
   .home-header-wrap {
-    background: #fcfeff;
+    background: map-get($colorful, light-white);
     padding: 0;
   }
   .home-content-wrap {
@@ -72,14 +88,18 @@
     }
     .home-content {
       flex: 1;
-      padding: 24px 24px 0 24px;
-      margin-bottom: 24px;
-      background: #fcfeff;
+      padding: 24px;
+      margin: 24px 0;
+      background: map-get($colorful, light-white);
+      ;
       min-height: 100%;
     }
   }
   .home-footer {
     text-align: center;
-    background-color: #fcfeff;
+    background-color: map-get($colorful, light-white);
+    ;
+    padding: 12px;
+    font-size: 16px;
   }
 }

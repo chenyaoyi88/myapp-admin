@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app.routing.module';
 import { MissingComponent } from './view/missing/missing.component';
 
 import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { DashboardComponent } from './view/dashboard/dashboard.component';
+import { ArticalComponent } from './view/home/artical/artical.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
     LoginComponent,
     RegisterComponent,
     MissingComponent,
+    DashboardComponent,
+    ArticalComponent,
   ],
   imports: [
     BrowserModule,

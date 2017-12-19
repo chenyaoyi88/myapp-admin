@@ -1,4 +1,7 @@
+@import '../../../styles/variables.scss';
 .page-404 {
+  height: 100%;
+  // background-color: $color-brand;
   .msg {
     position: absolute;
     width: 100%;
