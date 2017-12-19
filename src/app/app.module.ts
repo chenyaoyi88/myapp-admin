@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -22,7 +24,9 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // NgZorroAntdModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgZorroAntdModule
   ],
   providers: [],
   bootstrap: [AppComponent]

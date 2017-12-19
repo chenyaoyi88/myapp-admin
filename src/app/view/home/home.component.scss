@@ -1,0 +1,85 @@
+:host ::ng-deep .home-wrap {
+  height: 100%;
+}
+
+:host ::ng-deep .logo {
+  height: 32px;
+  background: #fcfeff;
+  border-radius: 6px;
+  margin: 16px;
+}
+
+ :host ::ng-deep .ant-layout-sider-collapsed .nav-text {
+  display: none;
+}
+
+ :host ::ng-deep .ant-layout-sider-collapsed .ant-menu-submenu-title:after {
+  display: none;
+}
+
+ :host ::ng-deep .ant-layout-sider-collapsed .anticon {
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+ :host ::ng-deep .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+ :host ::ng-deep .trigger:hover {
+  color: #108ee9;
+}
+
+.home-sider-wrap {
+  background-color: #1e90e5;
+}
+
+.home-wrap {
+  .home-menu {
+    background-color: initial;
+    border-right: none;
+    >li {
+      &.ant-menu-item {
+        &:hover {
+          color: #fcfeff !important;
+        }
+      }
+      &.ant-menu-item-selected {
+        &:hover {
+          color: #1e90e5 !important;
+        }
+      }
+    }
+  }
+}
+
+.home-main-wrap {
+  background-color: #e2f2fc;
+  .home-header-wrap {
+    background: #fcfeff;
+    padding: 0;
+  }
+  .home-content-wrap {
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    .home-breadcrumb-wrap {
+      margin: 12px 0;
+    }
+    .home-content {
+      flex: 1;
+      padding: 24px 24px 0 24px;
+      margin-bottom: 24px;
+      background: #fcfeff;
+      min-height: 100%;
+    }
+  }
+  .home-footer {
+    text-align: center;
+    background-color: #fcfeff;
+  }
+}

@@ -1,6 +1,6 @@
 @import "variables.scss";
 body {
-  background: map-get($colorful, color-1);
+  background: map-get($colorful, color-1) !important;
   font-size: 14px;
 }
 

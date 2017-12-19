@@ -1,19 +1,49 @@
 <div class="login-wrap">
-  <div class="login">
-    <label for="">
-      <input type="text" placeholder="用户名">
-    </label>
-    <label for="">
-      <input type="password" placeholder="密码">
-    </label>
-    <label for="">
-      <input type="text" placeholder="二维码">
-    </label>
-    <div class="login-btn-wrap">
-      <button class="login-btn">登录</button>
+  <div class="login content-wrap">
+    <div class="owl">
+      <div [class.password]="pwdFocus" class="hand"></div>
+      <div [class.password]="pwdFocus" class="hand hand-r"></div>
+      <div class="arms">
+        <div [class.password]="pwdFocus" class="arm"></div>
+        <div [class.password]="pwdFocus" class="arm arm-r"></div>
+      </div>
     </div>
-    <div class="login-note-wrap">
-      如果您还没有帐号，点这里<a routerLink="/register" routerLinkActive="active">「立即注册」</a>
-    </div>
+    <h2 class="login-title">APP后台管理</h2>
+    <form nz-form [formGroup]="validateFormLogin" class="login-form" (ngSubmit)="_submitForm()">
+      <div nz-form-item>
+        <div nz-form-control>
+          <nz-input formControlName="userName" [nzPlaceHolder]="'用户名'" [nzSize]="'large'">
+            <ng-template #prefix>
+              <i class="anticon anticon-user"></i>
+            </ng-template>
+          </nz-input>
+          <div nz-form-explain *ngIf="validateFormLogin.controls.userName.dirty&&validateFormLogin.controls.userName.hasError('required')">请输入您的用户名!</div>
+        </div>
+      </div>
+      <div nz-form-item>
+        <div nz-form-control>
+          <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'密码'" [nzSize]="'large'" (nzFocus)="owlEffectOn()"
+            (nzBlur)="owlEffectOff()">
+            <ng-template #prefix>
+              <i class="anticon anticon-lock"></i>
+            </ng-template>
+          </nz-input>
+          <div nz-form-explain *ngIf="validateFormLogin.controls.password.dirty&&validateFormLogin.controls.password.hasError('required')">请输入您的密码!</div>
+        </div>
+      </div>
+
+      <div class="login-form-btn" nz-form-item>
+        <div nz-form-control>
+
+          <label class="login-form-remember" nz-checkbox formControlName="remember">
+            <span>记住密码</span>
+          </label>
+          <a class="login-form-forgot" class="login-form-forgot">忘记密码</a>
+
+          <button nz-button class="login-form-button" [nzType]="'primary'" [nzSize]="'large'">登录</button>
+          <a routerLink="/register" routerLinkActive="active">马上注册</a>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

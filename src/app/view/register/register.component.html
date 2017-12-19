@@ -1,3 +1,55 @@
-<p>
-  register works!
-</p>
+<div class="register-wrap">
+  <div class="register content-wrap">
+    <div class="owl">
+      <div [class.password]="pwdFocus" class="hand"></div>
+      <div [class.password]="pwdFocus" class="hand hand-r"></div>
+      <div class="arms">
+        <div [class.password]="pwdFocus" class="arm"></div>
+        <div [class.password]="pwdFocus" class="arm arm-r"></div>
+      </div>
+    </div>
+    <h2 class="register-title">APP后台管理</h2>
+    <form nz-form [formGroup]="validateFormLogin" class="login-form" (ngSubmit)="_submitFormRegister()">
+      <div nz-form-item>
+        <div nz-form-control>
+          <nz-input formControlName="userName" [nzPlaceHolder]="'用户名'" [nzSize]="'large'">
+            <ng-template #prefix>
+              <i class="anticon anticon-user"></i>
+            </ng-template>
+          </nz-input>
+          <div nz-form-explain *ngIf="validateFormLogin.controls.userName.dirty&&validateFormLogin.controls.userName.hasError('required')">请输入您的用户名!</div>
+        </div>
+      </div>
+      <div nz-form-item>
+        <div nz-form-control>
+          <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'密码'" [nzSize]="'large'" (nzFocus)="owlEffectOn()"
+            (nzBlur)="owlEffectOff()">
+            <ng-template #prefix>
+              <i class="anticon anticon-lock"></i>
+            </ng-template>
+          </nz-input>
+          <div nz-form-explain *ngIf="validateFormLogin.controls.password.dirty&&validateFormLogin.controls.password.hasError('required')">请输入您的密码!</div>
+        </div>
+      </div>
+      <div nz-form-item>
+        <div nz-form-control>
+          <nz-input formControlName="password2" [nzType]="'password2'" [nzPlaceHolder]="'确认密码'" [nzSize]="'large'" (nzFocus)="owlEffectOn()"
+            (nzBlur)="owlEffectOff()">
+            <ng-template #prefix>
+              <i class="anticon anticon-lock"></i>
+            </ng-template>
+          </nz-input>
+          <div nz-form-explain *ngIf="validateFormLogin.controls.password2.dirty&&validateFormLogin.controls.password2.hasError('required')">请输入您的确认密码!</div>
+        </div>
+      </div>
+
+      <div nz-form-item>
+        <div nz-form-control>
+          <button nz-button class="register-form-button" [nzType]="'primary'" [nzSize]="'large'">注册</button>
+          已有帐号，
+          <a routerLink="/login" routerLinkActive="active">马上登录</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

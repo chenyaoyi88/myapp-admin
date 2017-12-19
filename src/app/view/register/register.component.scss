@@ -1,0 +1,25 @@
+@import '../../../styles/minxins.scss';
+@import '../../../styles/variables.scss';
+.register-wrap {
+  height: 100%;
+  @include align-justify(column, center, center);
+  background-image: linear-gradient(32deg, #7594db, #51a1cd 17%, #2daebf 51%, #36c9c5 89%, #3ee3ca);
+  .content-wrap {
+    min-width: 300px;
+    position: relative;
+    padding: 0 30px;
+    background-color: map-get($colorful, white);
+    border-radius: 3px;
+    box-shadow: 3px 5px 16px 0px rgba(0, 0, 0, .22);
+  }
+  .register-title {
+    padding: 15px 0;
+    font-size: 24px;
+    color: map-get($colorful, default);
+    text-align: center;
+  }
+}
+
+.register-form-button {
+  width: 100%;
+}

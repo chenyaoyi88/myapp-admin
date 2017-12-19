@@ -1,0 +1,49 @@
+@import '../../../styles/minxins.scss';
+@import '../../../styles/variables.scss';
+.login-wrap {
+  height: 100%;
+  @include align-justify(column, center, center);
+  background-image: linear-gradient(32deg, #7594db, #51a1cd 17%, #2daebf 51%, #36c9c5 89%, #3ee3ca);
+  .content-wrap {
+    position: relative;
+    padding: 0 30px;
+    background-color: map-get($colorful, white);
+    border-radius: 3px;
+    box-shadow: 3px 5px 16px 0px rgba(0, 0, 0, .22);
+  }
+  .login-title {
+    padding: 15px 0;
+    font-size: 24px;
+    color: map-get($colorful, default);
+    text-align: center;
+  }
+  .login {
+    .login-form-remember {
+      float: left;
+      width: auto;
+    }
+    .login-form-btn {
+      margin-top: -10px;
+    }
+  }
+  .register {
+    transform: rotateY(-180deg);
+  }
+}
+
+.login-btn-wrap {
+  margin-top: 10px;
+}
+
+.login-form {
+  max-width: 300px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+  margin-top: 5px;
+}

@@ -1,3 +1,43 @@
-<p>
-  home works!
-</p>
+<nz-layout class="home-wrap">
+  <nz-sider class="home-sider-wrap" nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo"></div>
+    <ul class="home-menu" nz-menu [nzMode]="isCollapsed?'vertical':'inline'">
+      <li nz-menu-item>
+        <span>
+          <i class="anticon anticon-file"></i>
+          <span class="nav-text">File</span>
+        </span>
+      </li>
+      <li nz-menu-item>
+        <span>
+          <i class="anticon anticon-file"></i>
+          <span class="nav-text">File</span>
+        </span>
+      </li>
+      <li nz-menu-item>
+        <span>
+          <i class="anticon anticon-file"></i>
+          <span class="nav-text">File</span>
+        </span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout class="home-main-wrap">
+
+    <nz-header class="home-header-wrap">
+      <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
+    </nz-header>
+
+    <nz-content class="home-content-wrap">
+      <nz-breadcrumb class="home-breadcrumb-wrap">
+        <nz-breadcrumb-item>User</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <div class="home-content">
+        Bill is a cat.
+      </div>
+    </nz-content>
+
+    <nz-footer class="home-footer">home ©2017 Implement By Angular</nz-footer>
+  </nz-layout>
+</nz-layout>

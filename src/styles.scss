@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './styles/index.scss';
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  line-height: 1.5
+}
+
+.home-wrap {
+  .home-menu {
+    // background-color: initial;
+    // border-right: none;
+    // .ant-menu-item:hover,
+    // .ant-menu-item-active,
+    // .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+    // .ant-menu-submenu-active,
+    // .ant-menu-submenu-title:hover {
+    //   color: #fcfeff !important;
+    // }
+    // .ant-menu {
+    //   background-color: initial;
+    // } 
+    // >li {
+    //   &:hover {
+    //     color: #fcfeff !important;
+    //   }
+    //   .ant-menu-submenu-title,.ant-menu-item {
+    //     &:hover {
+    //       color: #fcfeff !important;
+    //     }
+    //   }
+    //   .ant-menu {
+    //     background-color: initial;
+    //   }
+    // }
+  }
+}
