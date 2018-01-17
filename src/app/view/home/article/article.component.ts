@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-artical',
-  templateUrl: './artical.component.html',
-  styleUrls: ['./artical.component.scss']
+  selector: 'app-article',
+  templateUrl: './article.component.html',
+  styleUrls: ['./article.component.scss']
 })
-export class ArticalComponent implements OnInit {
+export class ArticleComponent implements OnInit {
   _dataSet = [];
 
   constructor() {

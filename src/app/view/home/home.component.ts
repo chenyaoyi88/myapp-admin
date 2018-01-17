@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,12 +7,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   isCollapsed = true;
 
-  constructor() { }
+  navList: Array<any> = [
+    {
+      name: '文章',
+      icon: 'anticon-file',
+      link: '/admin/article'
+    },
+    {
+      name: '设置',
+      icon: 'anticon-setting',
+      link: '/admin/setting'
+    },
+    {
+      name: '用户',
+      icon: 'anticon-user',
+      link: '/admin/user'
+    }
+  ];
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
   }
 
+  navClick(index, item) {
+    this.router.navigate([item.link]);
+  }
 }

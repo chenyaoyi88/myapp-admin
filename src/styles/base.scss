@@ -5,7 +5,7 @@ body {
 }
 
 a {
-  color: $color-brand;
+  // color: $color-brand;
   &:hover {
     color: darken($color-brand, 5%);
   }

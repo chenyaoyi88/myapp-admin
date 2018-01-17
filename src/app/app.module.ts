@@ -14,7 +14,9 @@ import { MissingComponent } from './view/missing/missing.component';
 
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { DashboardComponent } from './view/dashboard/dashboard.component';
-import { ArticalComponent } from './view/home/artical/artical.component';
+import { ArticleComponent } from './view/home/article/article.component';
+import { SettingComponent } from './view/home/setting/setting.component';
+import { UserComponent } from './view/home/user/user.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ArticalComponent } from './view/home/artical/artical.component';
     RegisterComponent,
     MissingComponent,
     DashboardComponent,
-    ArticalComponent,
+    ArticleComponent,
+    SettingComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

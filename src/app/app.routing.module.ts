@@ -6,7 +6,9 @@ import { LoginComponent } from './view/login/login.component';
 import { RegisterComponent } from './view/register/register.component';
 import { MissingComponent } from './view/missing/missing.component';
 import { DashboardComponent } from './view/dashboard/dashboard.component';
-import { ArticalComponent } from './view/home/artical/artical.component';
+import { ArticleComponent } from './view/home/article/article.component';
+import { SettingComponent } from './view/home/setting/setting.component';
+import { UserComponent } from './view/home/user/user.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'admin', pathMatch: 'full' },
@@ -24,10 +26,20 @@ const routes: Routes = [
                 data: { title: '仪表盘' }
             },
             {
-                path: 'artical',
-                component: ArticalComponent,
+                path: 'article',
+                component: ArticleComponent,
                 data: { title: '文章列表' }
             },
+            {
+                path: 'setting',
+                component: SettingComponent,
+                data: { title: '设置' }
+            },
+            {
+                path: 'user',
+                component: UserComponent,
+                data: { title: '用户' }
+            }
         ]
     },
     { path: 'login', component: LoginComponent, data: { title: '登录' } },
