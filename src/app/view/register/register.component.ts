@@ -34,12 +34,13 @@ export class RegisterComponent implements OnInit {
       )
     ) {
       return;
+    } else if (registerParams.password.length < 6) {
+      this._message.create('warning', '密码最少必须是6位');
+      return;
     } else if (registerParams.password2 !== registerParams.password) {
-      this._message.create('warning', '您两次输入的密码不一致，请重新输入');
+      this._message.create('warning', '两次输入的密码不一致，请重新输入');
       return;
     }
-
-    console.log(registerParams);
 
     this.isLoading = true;
 
@@ -50,7 +51,7 @@ export class RegisterComponent implements OnInit {
       (res: APP_Response<null>) => {
         switch (res.code) {
           case '0000':
-            // 成功
+            // 注册成功
             this._message.create('success', '注册成功');
             setTimeout(() => {
               this.router.navigate(['/login']);
@@ -62,9 +63,9 @@ export class RegisterComponent implements OnInit {
             this.isLoading = false;
             break;
           default:
+            // 其他
             this._message.create('warning', res.msg);
             this.isLoading = false;
-          // 其他
         }
       },
       (err: any) => {
