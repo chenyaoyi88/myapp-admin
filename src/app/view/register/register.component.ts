@@ -1,43 +1,99 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { RegisterService } from './register.service';
+import { NzMessageService } from 'ng-zorro-antd';
+import md5 from 'md5';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
+  providers: [NzMessageService, RegisterService]
 })
 export class RegisterComponent implements OnInit {
-  validateFormLogin: FormGroup;
+  validateFormRegister: FormGroup;
 
   // 密码input是否focus, 猫头鹰
-  pwdFocus = false;
+  isPwdFocus = false;
+  // 注册按钮loading
+  isLoading = false;
 
   _submitFormRegister() {
-    for (const i in this.validateFormLogin.controls) {
-      this.validateFormLogin.controls[i].markAsDirty();
+    for (const i in this.validateFormRegister.controls) {
+      this.validateFormRegister.controls[i].markAsDirty();
     }
-    // this.validateForm.value
+
+    const registerParams: Register_params = this.validateFormRegister.value;
+
+    if (
+      !(
+        registerParams.username ||
+        registerParams.password ||
+        registerParams.password2
+      )
+    ) {
+      return;
+    } else if (registerParams.password2 !== registerParams.password) {
+      this._message.create('warning', '您两次输入的密码不一致，请重新输入');
+      return;
+    }
+
+    console.log(registerParams);
+
+    this.isLoading = true;
+
+    registerParams.password = md5(registerParams.password);
+    delete registerParams.password2;
+
+    this.register.userRegister(registerParams).subscribe(
+      (res: APP_Response<null>) => {
+        switch (res.code) {
+          case '0000':
+            // 成功
+            this._message.create('success', '注册成功');
+            setTimeout(() => {
+              this.router.navigate(['/login']);
+            }, 1000);
+            break;
+          case '1001':
+            // 记录已存在
+            this._message.create('info', res.msg);
+            this.isLoading = false;
+            break;
+          default:
+            this._message.create('warning', res.msg);
+            this.isLoading = false;
+          // 其他
+        }
+      },
+      (err: any) => {
+        console.log(err);
+        this.isLoading = false;
+        this._message.create('error', '请求注册接口失败');
+      }
+    );
   }
 
   // 密码动画效果
   owlEffectOn() {
-    this.pwdFocus = true;
+    this.isPwdFocus = true;
   }
 
   owlEffectOff() {
-    this.pwdFocus = false;
+    this.isPwdFocus = false;
   }
 
-  constructor(private fb: FormBuilder) {
-  }
+  constructor(
+    private fb: FormBuilder,
+    private _message: NzMessageService,
+    private register: RegisterService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.validateFormLogin = this.fb.group({
-      userName: [null, [Validators.required]],
+    this.validateFormRegister = this.fb.group({
+      username: [null, [Validators.required]],
       password: [null, [Validators.required]],
       password2: [null, [Validators.required]]
     });

@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  navClick(index, item) {
-    this.router.navigate([item.link]);
+  navClick(index, nav) {
+    this.router.navigate([nav.link]);
   }
 }

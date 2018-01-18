@@ -41,7 +41,7 @@
           <a class="login-form-forgot" class="login-form-forgot">忘记密码</a>
 
           <button nz-button class="login-form-button" [nzType]="'primary'" [nzSize]="'large'">登录</button>
-          <a routerLink="/register" routerLinkActive="active">马上注册</a>
+          <span>还没有帐号，</span><a [routerLink]="['/register']" routerLinkActive="active">马上注册</a>
         </div>
       </div>
     </form>

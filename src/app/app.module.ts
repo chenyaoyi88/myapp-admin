@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
+import { SharedModule } from './shared';
 
 import { AppComponent } from './app.component';
 
@@ -36,7 +38,9 @@ import { UserComponent } from './view/home/user/user.component';
     FormsModule,
     ReactiveFormsModule,
     NgZorroAntdModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
