@@ -1,13 +1,6 @@
 <div class="register-wrap">
   <div class="register content-wrap">
-    <div class="owl">
-      <div [class.password]="isPwdFocus" class="hand"></div>
-      <div [class.password]="isPwdFocus" class="hand hand-r"></div>
-      <div class="arms">
-        <div [class.password]="isPwdFocus" class="arm"></div>
-        <div [class.password]="isPwdFocus" class="arm arm-r"></div>
-      </div>
-    </div>
+    <app-owl [pwdFocus]="isPwdFocus"></app-owl>
     <h2 class="register-title">APP后台管理</h2>
     <form nz-form [formGroup]="validateFormRegister" class="login-form" (ngSubmit)="_submitFormRegister()">
       <div nz-form-item>
@@ -45,7 +38,7 @@
 
       <div nz-form-item>
         <div nz-form-control>
-          <button nz-button class="register-form-button" [nzType]="'primary'" [nzSize]="'large'"  [nzLoading]="isLoading">注册</button>已有帐号，
+          <button nz-button class="register-form-button" [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="isLoading">注册</button>已有帐号，
           <a [routerLink]="['/login']" routerLinkActive="active">马上登录</a>
         </div>
       </div>

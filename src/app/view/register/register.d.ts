@@ -7,3 +7,8 @@ interface Register_params {
   // 密码2
   password2?: string;
 }
+
+// 登录返回
+interface Login_Response {
+  token: string;
+}

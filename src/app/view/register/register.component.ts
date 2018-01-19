@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   isLoading = false;
 
   _submitFormRegister() {
+    // 输入选项
     for (const i in this.validateFormRegister.controls) {
       this.validateFormRegister.controls[i].markAsDirty();
     }
@@ -44,10 +45,12 @@ export class RegisterComponent implements OnInit {
 
     this.isLoading = true;
 
-    registerParams.password = md5(registerParams.password);
-    delete registerParams.password2;
+    const registerRequest: Register_params = {
+      username: registerParams.username,
+      password: md5(registerParams.password)
+    };
 
-    this.register.userRegister(registerParams).subscribe(
+    this.register.userRegister(registerRequest).subscribe(
       (res: APP_Response<null>) => {
         switch (res.code) {
           case '0000':
@@ -59,7 +62,7 @@ export class RegisterComponent implements OnInit {
             break;
           case '1001':
             // 记录已存在
-            this._message.create('info', res.msg);
+            this._message.create('info', '用户名已存在');
             this.isLoading = false;
             break;
           default:

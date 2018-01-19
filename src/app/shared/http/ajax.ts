@@ -63,7 +63,7 @@ export class AjaxService {
       .timeout(this.timeout)
       .map(res => {
         const data: any = res.json();
-        this.timeoutTest(data);
+        // this.timeoutTest(data);
         return data;
       })
       .catch(this.handleError);
@@ -83,7 +83,7 @@ export class AjaxService {
       .timeout(this.timeout)
       .map(res => {
         const data: any = res.json();
-        this.timeoutTest(data);
+        // this.timeoutTest(data);
         return data;
       })
       .catch(this.handleError);
