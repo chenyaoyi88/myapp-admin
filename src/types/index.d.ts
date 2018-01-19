@@ -1,9 +1,3 @@
-interface NavList {
-    name: string;
-    icon: string;
-    link: string;
-}
-
 // 全局请求响应格式
 interface APP_Response<T> {
     // 相响应码

@@ -8,9 +8,9 @@
 
 ### 技术栈
 
-- angular           v5.0.0
-- augular-cli       v1.6.1
-- ng-zorro-antd     v0.6.7
+* angular v5.0.0
+* augular-cli v1.6.1
+* ng-zorro-antd v0.6.7（后期将会移除，改为全部自己写的 UI 组件）
 
 ### 预期实现功能
 
@@ -22,13 +22,51 @@
 
 ### 目前已完成功能
 
-| 项目                | 完成度     | 
-| ------------------- | -------- |
-| 界面布局              | 30% | 
-| 数据对接             | 10% | 
+| 项目     | 完成度 |
+| -------- | ------ |
+| 界面布局 | 30%    |
+| 数据对接 | 10%    |
 
+## 目录结构描述
 
-### cli命令
+```
+├── node_modules                        // 应用所需的依赖包
+├── src                                 // 应用的全部业务代码以及资源文件
+│   └── app                             // 应用的主业务代码
+|       ├── api                         // 应用的 api
+|       ├── component                   // 应用的公共页面/功能组件
+|       ├── services                    // 应用的公共服务
+|       ├── shared                      // 应用的公共方法
+|       ├── view                        // 应用的所有页面
+|       ├── app.component.html          // 应用的根组件 html
+|       ├── app.component.scss          // 应用的根组件 scss
+|       ├── app.component.ts            // 应用的根组件 ts
+|       ├── app.module.ts               // 应用的主模块
+|       └── app.routing.module.ts       // 应用的主路由模块配置      
+│   ├── assets                          // 应用的图片资源
+│   ├── environments                    // 应用的环境变量
+│   ├── styles                          // 应用的所有的样式文件
+│   ├── types                           // 应用的主要业务的声明文件
+│   ├── favicon.ico                     // 应用的 icon
+│   ├── index.html                      // 应用的 html 入口
+│   ├── main.ts                         // 应用的引导程序和平台相关的逻辑
+│   ├── polyfills.ts                    // 应用的兼容性补丁包
+│   ├── test.ts                         // 应用的测试入口
+│   ├── tsconfig.app.json               // 应用的业务文件的编译配置
+│   ├── tsconfig.spec.json              // 应用的测试文件的编译配置
+│   └── typings.d.ts                    // 接口声明
+├── .angular-cli.json                   // angular-cli默认配置
+├── .editorconfig                       // 编码风格规范
+├── .gitignore                          // 用于配置不需要加入版本管理的文件
+├── package-lock.json                   // 记录并且锁定应用的依赖包和项目的配置
+├── package.json                        // 应用的开发/执行依赖包、命令配置和项目说明
+├── protractor.conf                     // 应用的自动化测试配置
+├── README.md                           // 应用的介绍文件（本文件）
+├── tsconfig.json                       // typescript的编译配置
+└── tslint.json                         // typescript的编码规范配置
+```
+
+### cli 命令
 
 创建组件
 

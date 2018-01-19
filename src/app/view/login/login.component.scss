@@ -8,6 +8,7 @@
   // background-image: linear-gradient(32deg, #7594db, #51a1cd 17%, #2daebf 51%, #36c9c5 89%, #3ee3ca);
   
   .content-wrap {
+    min-width: 300px;
     position: relative;
     padding: 0 30px;
     background-color: map-get($colorful, white);
