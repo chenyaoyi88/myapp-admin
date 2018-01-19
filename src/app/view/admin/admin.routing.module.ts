@@ -7,16 +7,22 @@ import { SettingComponent } from './setting';
 import { UserComponent } from './user';
 import { DashboardComponent } from './dashboard';
 
+import { LoginAuthGuard } from '../../services';
+
 const adminRoutes: Routes = [
   {
     // 默认路由到 admin
     path: 'admin',
     component: AdminComponent,
+    // 守卫主路由
+    canActivate: [LoginAuthGuard],
     data: { title: '首页' },
     children: [
       {
         path: '',
         redirectTo: 'dashborad',
+        // 守卫子路由（必须先添加守卫主路由）
+        canActivateChild: [LoginAuthGuard],
         pathMatch: 'full',
         data: { title: '仪表盘' }
       },

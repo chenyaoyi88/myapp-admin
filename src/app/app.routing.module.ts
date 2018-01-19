@@ -13,13 +13,22 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: './view/admin/admin.module#AdminModule'
   },
-  { path: 'login', component: LoginComponent, data: { title: '登录' } },
-  { path: 'register', component: RegisterComponent, data: { title: '注册' } },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: { title: '登录' }
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    data: { title: '注册' }
+  },
   { path: '**', component: MissingComponent, data: { title: '404' } }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  // providers: [LoginAuthGuard, LoginService]
 })
 export class AppRoutingModule {}
