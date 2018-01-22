@@ -14,3 +14,44 @@ html {
 body {
   line-height: 1.5;
 }
+
+.mg-t-5 {
+  margin-top: 5;
+}
+.mg-t-10 {
+  margin-top: 10;
+}
+.mg-t-15 {
+  margin-top: 15;
+}
+.mg-t-20 {
+  margin-top: 20;
+}
+.mg-b-5 {
+  margin-bottom: 5;
+}
+.mg-b-10 {
+  margin-bottom: 10;
+}
+.mg-b-15 {
+  margin-bottom: 15;
+}
+.mg-b-20 {
+  margin-bottom: 20;
+}
+
+// table
+.admin-table {
+  display: flex;
+  flex-direction: column;
+  .admin-table-search {
+    margin-bottom: 15px;
+  }
+  .admin-table-list {
+    flex: 1;
+  }
+  .admin-table-pagination {
+    margin-top: 15px;
+    text-align: right;
+  }
+}

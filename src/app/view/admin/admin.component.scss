@@ -24,32 +24,31 @@
     box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.12);
   }
   .myapp-desc {
-    
   }
 }
 
- :host ::ng-deep .ant-layout-sider-collapsed .nav-text {
+:host ::ng-deep .ant-layout-sider-collapsed .nav-text {
   display: none;
 }
 
- :host ::ng-deep .ant-layout-sider-collapsed .ant-menu-submenu-title:after {
+:host ::ng-deep .ant-layout-sider-collapsed .ant-menu-submenu-title:after {
   display: none;
 }
 
- :host ::ng-deep .ant-layout-sider-collapsed .anticon {
+:host ::ng-deep .ant-layout-sider-collapsed .anticon {
   font-size: 16px;
   margin-left: 8px;
 }
 
- :host ::ng-deep .trigger {
+:host ::ng-deep .trigger {
   font-size: 18px;
   line-height: 64px;
   padding: 0 16px;
   cursor: pointer;
-  transition: color .3s;
+  transition: color 0.3s;
 }
 
- :host ::ng-deep .trigger:hover {
+:host ::ng-deep .trigger:hover {
   color: $color-brand;
 }
 
@@ -67,7 +66,7 @@
   .home-menu {
     background-color: initial;
     border-right: none;
-    >li {
+    > li {
       font-size: 16px;
       color: map-get($colorful, light-white);
       &.ant-menu-item-selected {
@@ -82,6 +81,14 @@
   .home-header-wrap {
     background: map-get($colorful, light-white);
     padding: 0;
+    .home-header-avatar-wrap {
+      height: 100%;
+      float: right;
+      margin-right: 20px;
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+    }
   }
   .home-content-wrap {
     margin: 0 20px;
@@ -95,15 +102,20 @@
       padding: 24px;
       margin: 24px 0;
       background: map-get($colorful, light-white);
-      ;
       min-height: 100%;
     }
   }
   .home-footer {
     text-align: center;
     background-color: map-get($colorful, light-white);
-    ;
     padding: 12px;
     font-size: 16px;
+  }
+}
+
+.home-header-avatar-wrap {
+  .home-header-avatar-title {
+    font-size: 18px;
+    padding: 0 15px;
   }
 }

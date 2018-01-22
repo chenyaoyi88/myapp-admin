@@ -20,6 +20,8 @@ export const API = {
     // 登录
     login: HOST + 'user/login',
     // 注册
-    register: HOST + 'user/register'
+    register: HOST + 'user/register',
+    // 退出
+    logout: HOST + 'user/logout'
   }
 };

@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
             }, 1000);
             // 存token在本地
             sessionStorage.setItem('token', res.data.token);
+            sessionStorage.setItem('username', res.data.username);
             break;
           case '1004':
             // 记录已存在

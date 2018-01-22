@@ -2,7 +2,9 @@
   <nz-sider class="home-sider-wrap" nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
 
     <div class="logo">
-      <div class="myapp-logo"><a [routerLink]="['/admin']">YY</a></div>
+      <div class="myapp-logo">
+        <a [routerLink]="['/admin']">YY</a>
+      </div>
       <!-- <div class="myapp-desc">我的app后台</div> -->
     </div>
 
@@ -22,15 +24,29 @@
 
     <nz-header class="home-header-wrap">
       <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
+      <div class="home-header-avatar-wrap">
+        <div class="home-header-avatar-title" *ngIf="sUsername">
+          <nz-dropdown [nzPlacement]="'bottomCenter'">
+            <a class="ant-dropdown-link" nz-dropdown>
+              {{sUsername}}
+              <i class="anticon anticon-down"></i>
+            </a>
+            <ul nz-menu>
+              <li nz-menu-item>
+                <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">个人资料</a>
+              </li>
+              <li nz-menu-item>
+                <a rel="noopener noreferrer" href="javascript:;" (click)="logout()">退出登录</a>
+              </li>
+            </ul>
+          </nz-dropdown>
+        </div>
+
+      </div>
     </nz-header>
 
     <nz-content class="home-content-wrap">
-      <!-- <nz-breadcrumb class="home-breadcrumb-wrap">
-        <nz-breadcrumb-item>User</nz-breadcrumb-item>
-        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
-      </nz-breadcrumb> -->
       <div class="home-content">
-        <!-- Bill is a cat. -->
         <router-outlet></router-outlet>
       </div>
     </nz-content>

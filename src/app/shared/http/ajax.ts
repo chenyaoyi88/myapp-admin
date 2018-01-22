@@ -15,13 +15,15 @@ import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class AjaxService {
-  /** 请求 header */
+  // 请求 header
   private headers: Headers = new Headers({
     'Content-Type': 'application/json'
   });
-  /** 用户 token */
-  private accessToken = '';
-  /** 超时时间  */
+
+  // 用户 token
+  // private accessToken = '';
+
+  // 超时时间
   private timeout = 5000;
 
   /**
@@ -35,11 +37,19 @@ export class AjaxService {
     // private userAuth: LoginGuard,
     private router: Router
   ) {
-    // // 如果用户已登录，header带token请求
-    // if (userAuth.checkLogin) {
-      this.accessToken = sessionStorage.getItem('user_token');
-      this.headers = new Headers({ 'Content-Type': 'application/json', 'token': this.accessToken });
-    // }
+    this.setHeaderToken();
+  }
+
+  // 如果用户已登录，header带token请求
+  setHeaderToken(): Headers {
+    const token = sessionStorage.getItem('token');
+    if (token) {
+      this.headers = new Headers({
+        'Content-Type': 'application/json',
+        token: token
+      });
+    }
+    return this.headers;
   }
 
   /**
@@ -55,7 +65,7 @@ export class AjaxService {
       para.push(`${index}=${params[index]}`);
     }
     const options: RequestOptions = new RequestOptions({
-      headers: this.headers,
+      headers: this.setHeaderToken(),
       search: para.join('&')
     });
     return this.http
@@ -77,7 +87,7 @@ export class AjaxService {
    *
    */
   post(url: string, params?: any): Observable<any> {
-    const options = new RequestOptions({ headers: this.headers });
+    const options = new RequestOptions({ headers: this.setHeaderToken() });
     return this.http
       .post(url, JSON.stringify(params), options)
       .timeout(this.timeout)
