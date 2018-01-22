@@ -96,3 +96,17 @@ npm run build:prod
 # 在 src/app/view/home 下面添加一个 setting 组件
 ng g component view/home/setting --module app
 ```
+
+### 问题记录
+
+2017.01.22
+
+开发的时候出现以下提示：
+
+```bash
+WARNING in Duplicated path in loadChildren detected during a rebuild. We will take the latest version detected and override it to save rebuild time. You should perform a full build to validate that your routes don't overlap.
+```
+
+在重建过程中检测到的 loadChildren 中的重复路径警告。我们将使用最新的版本，并覆盖它以节省重建时间。您应该执行完整的构建，以验证您的路由不会重叠。
+
+issue：[相关issue地址](https://github.com/angular/angular-cli/issues/8722)

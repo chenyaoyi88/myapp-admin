@@ -5,6 +5,8 @@ import { LoginComponent } from './view/login/login.component';
 import { RegisterComponent } from './view/register/register.component';
 import { MissingComponent } from './view/missing/missing.component';
 
+import { LoginAuthService, LoginAuthGuard } from './services';
+
 const routes: Routes = [
   // 默认路由到 admin
   { path: '', redirectTo: 'admin', pathMatch: 'full' },
@@ -16,11 +18,13 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [LoginAuthGuard],
     data: { title: '登录' }
   },
   {
     path: 'register',
     component: RegisterComponent,
+    canActivate: [LoginAuthGuard],
     data: { title: '注册' }
   },
   { path: '**', component: MissingComponent, data: { title: '404' } }
@@ -29,6 +33,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
-  // providers: [LoginAuthGuard, LoginService]
+  providers: [LoginAuthService, LoginAuthGuard]
 })
 export class AppRoutingModule {}

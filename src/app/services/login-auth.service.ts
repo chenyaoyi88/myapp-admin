@@ -6,14 +6,13 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
 
 @Injectable()
-export class LoginService {
+export class LoginAuthService {
   // 默认是未登录状态
   isLoggedIn = false;
-
   // 登录之后重定向到登录前的页面
   redirectUrl: string;
 
-  login(): boolean {
+  login(type: string): boolean {
     if (sessionStorage.getItem('token')) {
       // 如果本地存有 token （表示已登录），记录下登录状态，返回 true
       this.isLoggedIn = true;

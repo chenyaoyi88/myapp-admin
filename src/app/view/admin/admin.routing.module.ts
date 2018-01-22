@@ -21,8 +21,8 @@ const adminRoutes: Routes = [
       {
         path: '',
         redirectTo: 'dashborad',
-        // 守卫子路由（必须先添加守卫主路由）
-        canActivateChild: [LoginAuthGuard],
+        // // 守卫子路由（必须先添加守卫主路由）
+        // canActivateChild: [LoginAuthGuard],
         pathMatch: 'full',
         data: { title: '仪表盘' }
       },

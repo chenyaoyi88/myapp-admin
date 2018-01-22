@@ -24,15 +24,13 @@ import { LoginComponent } from './view/login/login.component';
 import { RegisterComponent } from './view/register/register.component';
 import { MissingComponent } from './view/missing/missing.component';
 
-import { LoginAuthGuard, LoginService } from './services';
-
 @NgModule({
   declarations: [
     AppComponent,
 
     LoginComponent,
     RegisterComponent,
-    MissingComponent,
+    MissingComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +49,7 @@ import { LoginAuthGuard, LoginService } from './services';
     // 路由模块（放最后）
     AppRoutingModule
   ],
-  providers: [LoginService, LoginAuthGuard ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
